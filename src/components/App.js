@@ -9,6 +9,7 @@ import About from 'views/about';
 import Home from 'views/home';
 import Users from 'views/users';
 import Todos from 'views/todos';
+import Keyboard from 'views/keyboard';
 
 
 import Modal from 'cmpt/Modal';
@@ -47,6 +48,7 @@ const App = React.createClass({
       case '/about': Child = About; break;
       case '/users': Child = Users; break;
       case '/todos': Child = Todos; break;
+      case '/keyboard': Child = Keyboard; break;
       default: Child = Home;
     }
 
@@ -79,6 +81,7 @@ const App = React.createClass({
               <li><a href="#/about">About</a></li>
               <li><a href="#/users">Users</a></li>
               <li><a href="#/todos">Todos</a></li>
+              <li><a href="#/keyboard">Keyboard</a></li>
             </ul>
             <Child/>
             <Modal/>
