@@ -110,7 +110,23 @@ export default ( state = initialState, action ) => {
         editorData: _.clone(initialState.editorData)
       })
 
+    // 編集するデータのリセット
+    case 'FIXED_TODO':
+      console.log(action)
 
+      newAll = all.map((item) => {
+        if ( item.id !== action.id) {
+          return item
+        }
+        return Object.assign({}, item, {
+          text: action.text
+        })
+      })
+
+      return createNewState({
+        all: newAll,
+        filteredList: getVisibleTodos(newAll, state.filter)
+      })
     // 編集ウィンドウの開閉
     case 'OPEN_EDIT':
       return createNewState({ isEditing: true })

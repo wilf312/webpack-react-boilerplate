@@ -27,7 +27,7 @@ module.exports = function() {
           exclude: /node_modules/
         },
         {
-          test: /\.less$/,
+          test: /\.styl$/,
           use: [
             'style-loader',
             {
@@ -37,7 +37,7 @@ module.exports = function() {
                 importLoaders: 1,
               },
             },
-            'less-loader',
+            'stylus-loader',
             'postcss-loader',
           ]
         },

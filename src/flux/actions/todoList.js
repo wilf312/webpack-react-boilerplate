@@ -39,6 +39,16 @@ export const editTodo = (id, text) => {
     text,
   }
 }
+
+export const fixedTodo = (id, text) => {
+  console.log('id -> ', id);
+  console.log('text -> ', text);
+  return {
+    type: 'FIXED_TODO',
+    id,
+    text,
+  }
+}
 export const resetEditTodo = () => {
   return {
     type: 'RESET_EDIT_TODO',
