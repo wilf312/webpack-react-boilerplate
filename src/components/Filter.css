@@ -1,0 +1,18 @@
+.Filter {
+  list-style: none;
+}
+
+.Filter > li {
+  float: left;
+  margin: 0 5px;
+  padding: 0 10px;
+  border-radius: 10px;
+}
+
+.active {
+  background-color: white;
+  color: black;
+}
+
+.Filter{ /zoom : 1; }
+.Filter:after{ content : ''; display : block; clear : both; height:0; }

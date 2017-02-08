@@ -1,0 +1,3 @@
+.todos:after {
+  content: 'これはtodosのCSSから書き出されています'
+}

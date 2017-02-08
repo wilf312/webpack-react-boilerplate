@@ -1,0 +1,3 @@
+.home:after {
+  content: 'これはhomeのCSSから書き出されています'
+}

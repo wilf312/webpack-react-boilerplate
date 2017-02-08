@@ -1,0 +1,30 @@
+.app {
+    text-size-adjust: none;
+    font-family: helvetica, arial, sans-serif;
+    line-height: 200%;
+    padding: 6px 20px 30px;
+    color: white;
+
+}
+
+.app a {
+  color: white;
+}
+
+.app a:hover {
+  text-decoration: none;
+}
+
+
+.app > ul {
+  list-style: none;
+}
+.app > ul li {
+  float: left;
+  margin: 0 10px;
+}
+.app > ul:after {
+  content: '';
+  display: block;
+  clear: both;
+}
