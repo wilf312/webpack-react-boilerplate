@@ -2,14 +2,16 @@ import React, { PropTypes } from 'react'
 import Todo from 'cmpt/todo'
 
 import { connect } from 'react-redux'
-import { toggleTodo } from 'flux/actions/todoList'
+import { toggleTodo, countUp, countDown } from 'flux/actions/todoList'
 
 const mapStateToProps = (state) => {
-  console.log('state', state)
   return {
-    todos: state.todoList.filteredList
+    todos: state.todoList.filteredList,
+    count: state.todoList.count,
   }
 }
+
+
 
 /**
 
@@ -51,6 +53,13 @@ class TodoList extends React.Component {
             completed={item.completed}
             onClick={this.handleClick.bind(this, item.id)}/>
         )}
+
+
+        <li>
+          count: {this.props.count}
+          <button onClick={this.clickCountUp.bind(this)}> カウントアップ </button>
+          <button onClick={this.clickCountDown.bind(this)}> カウントダウン </button>
+        </li>
       </ul>
     )
   }
@@ -59,6 +68,12 @@ class TodoList extends React.Component {
   }
   handleClick(id) {
     this.props.dispatch(toggleTodo(id))
+  }
+  clickCountUp() {
+    this.props.dispatch(countUp())
+  }
+  clickCountDown() {
+    this.props.dispatch(countDown())
   }
   componentDidMount() {
     // console.log('mounted')

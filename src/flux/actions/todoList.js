@@ -6,6 +6,17 @@
 // データを受け取ったら、
 // reducerにデータを渡す
 
+export const countUp = () => {
+  return {
+    type: 'COUNT_UP',
+  }
+}
+export const countDown = () => {
+  return {
+    type: 'COUNT_DOWN',
+  }
+}
+
 
 export const addTodo = (text) => {
   return {

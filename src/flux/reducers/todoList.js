@@ -5,6 +5,7 @@
  import _ from 'lodash'
 
 const initialState = {
+  count: 0,
   id: 0,
   all: [],
   filter: 'SHOW_ALL',
@@ -30,6 +31,16 @@ const addTodo = ( state, action, id ) => {
     default:
       return state
   }
+}
+
+
+
+if (module.hot) {
+  module.hot.accept(function(err) {
+    if (err) {
+      console.error(err);
+    }
+  })
 }
 
 
@@ -103,6 +114,22 @@ export default ( state = initialState, action ) => {
           text: action.text,
         }
       })
+    // 編集するデータの受け渡し
+    case 'EDIT_TODO':
+      return createNewState({
+        editorData: {
+          id: action.id,
+          text: action.text,
+        }
+      })
+    // 編集するデータの受け渡し
+    case 'EDIT_TODO':
+      return createNewState({
+        editorData: {
+          id: action.id,
+          text: action.text,
+        }
+      })
 
     // 編集するデータのリセット
     case 'RESET_EDIT_TODO':
@@ -133,7 +160,10 @@ export default ( state = initialState, action ) => {
     case 'CLOSE_EDIT':
       return createNewState({ isEditing: false })
 
-
+    case 'COUNT_UP':
+      return createNewState({ count: state.count+1 })
+    case 'COUNT_DOWN':
+      return createNewState({ count: state.count-1 })
 
 
     default:
