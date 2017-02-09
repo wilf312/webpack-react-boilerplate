@@ -8,18 +8,17 @@ import {closeEdit, fixedTodo} from 'flux/actions/todoList'
 class EditTodo extends React.Component {
 
   constructor (props) {
-    console.log('============================- constructor')
     super(props)
   }
 
   componentDidMount() {
     this.refs.text.value = this.props.text ? this.props.text : ''
-    console.log(this.refs.text)
+    // console.log(this.refs.text)
   }
 
   shouldComponentUpdate(nextProps, nextState) {
-    console.log('this.props -> ', this.props);
-    console.log('nextProps -> ', nextProps);
+    // console.log('this.props -> ', this.props);
+    // console.log('nextProps -> ', nextProps);
 
     // 変更あった
     if (this.props.editorData.id !== nextProps.editorData.id ||
@@ -56,7 +55,6 @@ class EditTodo extends React.Component {
   }
 
   clickCancel () {
-    console.log('editフラグをfalseにします')
     this.props.dispatch(closeEdit())
   }
 

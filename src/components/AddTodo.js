@@ -15,9 +15,6 @@ class Component extends React.Component {
       </div>
     )
   }
-  componentWillMount() {
-    console.log('mounted')
-  }
   clickHandler() {
     const text = this.inputText.value
     if (text == null || text == '') {

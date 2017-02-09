@@ -36,13 +36,12 @@ dispatchへのアクセス
 class TodoList extends React.Component {
 
   render () {
-    console.log(this.props.todos)
+    // console.log(this.props.todos)
     if (this.props.todos == null) {
       return (
         <ul></ul>
         )
     }
-    console.log('todos', this.props.todos)
     return (
       <ul>
         {this.props.todos.map((item) =>
