@@ -12,16 +12,8 @@ import Todos from 'views/todos';
 import Keyboard from 'views/keyboard';
 
 
+
 import Modal from 'cmpt/Modal';
-
-
-// ----------------- Reduxの実装追加
-import { Provider } from 'react-redux'
-import {createStoreWithMiddleware} from 'flux/store'
-
-// ----------------- テスト用
-import {addTodo} from 'flux/actions/todoList'
-
 
 
 const App = React.createClass({
@@ -52,28 +44,9 @@ const App = React.createClass({
       default: Child = Home;
     }
 
-    let store = createStoreWithMiddleware()
-
-
-    console.log(store)
-
-
-
-    store.dispatch(addTodo('Aというタスク'))
-    store.dispatch(addTodo('Bというタスク'))
-    store.dispatch(addTodo('[♥óܫò]😍 絵文字テスト タスク'))
-    store.dispatch(addTodo('(´°̥̥̥̥̥̥̥̥ω°̥̥̥̥̥̥̥̥｀) タスク'))
-    store.dispatch(addTodo('...............'))
-    store.dispatch(addTodo('੭ੇʓ ੭ੇʓ'))
-    store.dispatch(addTodo('...............'))
-    store.dispatch(addTodo('ઈ(@̴̨̊̋̐̃̀̽̽ͅ❦@̴̨̊̋̐̃̀̽̽ͅ)ૐタスク'))
-
-
-
 
 
     return (
-      <Provider store={store}>
         <div className={styles.app}>
             <h1>App</h1>
             <ul>
@@ -84,13 +57,13 @@ const App = React.createClass({
               <li><a href="#/keyboard">Keyboard</a></li>
             </ul>
             <Child/>
-            <Modal/>
         </div>
-      </Provider>
       )
 
   },
 })
+
+
 
 
 export default App;
