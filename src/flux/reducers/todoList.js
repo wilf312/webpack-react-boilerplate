@@ -35,14 +35,6 @@ const addTodo = ( state, action, id ) => {
 
 
 
-if (module.hot) {
-  module.hot.accept(function(err) {
-    if (err) {
-      console.error(err);
-    }
-  })
-}
-
 
 
 const getVisibleTodos = (allList, filter) => {
