@@ -1,4 +1,6 @@
 # webpack-react-project 構築
+
+[![Greenkeeper badge](https://badges.greenkeeper.io/wilf312/webpack-react-boilerplate.svg)](https://greenkeeper.io/)
 webpack react react-router redux [CSS言語]の環境構築
 
 
